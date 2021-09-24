@@ -7,6 +7,28 @@
 ## 源库
 https://github.com/NervJS/taro/tree/next/packages/postcss-pxtransform
 
+## Install
+
+```shell
+// 1.0.0 版本
+$ npm install git+https://github.com/thiszhong/postcss-pxtransform.git#v1.0.0 --save-dev
+
+// 0.0.1 版本
+$ npm install git+https://github.com/thiszhong/postcss-pxtransform.git#v0.0.1 --save-dev
+```
+
+##### 版本区别：
+主要是在转 h5 rem 时的区别，主要影响项目 rem 基准值的配置
+
+- **v0.0.1**：
+同源库
+转 h5 rem 时，640（设计稿）-40（baseFontSize基准值），即 750-46.875，即开发时设计稿宽度为 640px 时 1rem = 40px，宽度为 750px 时 1rem = 46.875px
+
+- **v1.0.0**
+转 h5 rem 时，750（设计稿）-100（baseFontSize基准值），即开发时设计稿宽度为 750px 时 1rem = 100px，方便项目开发时尺寸计算（loader自动转的可以忽略）。
+`options.platform` 增加了 1个选项 `px` ，效果同 `rn` 选项，用于没有 `rem` 的项目。
+
+
 ## Usage
 
 ### 小程序
@@ -30,6 +52,19 @@ options = {
 options = {
     platform: 'rn',
     designWidth: 750,
+}
+```
+
+### 默认
+```js
+options = {
+    platform: 'weapp',
+    designWidth: 750,
+    deviceRatio: {
+        640: 2.34 / 2,
+        750: 1,
+        828: 1.81 / 2
+    }
 }
 ```
 
