@@ -12,9 +12,13 @@ https://github.com/NervJS/taro/tree/next/packages/postcss-pxtransform
 ```shell
 // 1.0.0 版本
 $ npm install git+https://github.com/thiszhong/postcss-pxtransform.git#v1.0.0 --save-dev
+// 码云
+$ npm install git+https://gitee.com/thiszhong/postcss-pxtransform.git#v1.0.0 --save-dev
 
 // 0.0.1 版本
 $ npm install git+https://github.com/thiszhong/postcss-pxtransform.git#v0.0.1 --save-dev
+// 码云
+$ npm install git+https://gitee.com/thiszhong/postcss-pxtransform.git#v0.0.1 --save-dev
 ```
 
 ##### 版本区别：
